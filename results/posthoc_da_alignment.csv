@@ -1,0 +1,11 @@
+direction,method,space,domain_clf_error,proxy_a_distance
+STATS19->CRSS,mlp_src,hidden-128,0.19866666666666666,1.2053333333333334
+STATS19->CRSS,deep_coral,hidden-128,0.19175,1.233
+STATS19->CRSS,dann,hidden-128,0.20325,1.187
+STATS19->CRSS,xgb_src,input,0.07358333333333333,1.7056666666666667
+STATS19->CRSS,coral_xgb,input,0.0,2.0
+CRSS->STATS19,mlp_src,hidden-128,0.208,1.1680000000000001
+CRSS->STATS19,deep_coral,hidden-128,0.225,1.1
+CRSS->STATS19,dann,hidden-128,0.22391666666666668,1.1043333333333334
+CRSS->STATS19,xgb_src,input,0.0795,1.682
+CRSS->STATS19,coral_xgb,input,0.0,2.0

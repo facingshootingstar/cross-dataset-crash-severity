@@ -1,0 +1,111 @@
+{
+  "RQ9": {
+    "per_pair": {
+      "BAAC->CRSS": {
+        "pre_registered": true,
+        "nstar": {
+          "target_only": 25000
+        },
+        "transfer_beats_target_only": false
+      },
+      "BAAC->STATS19": {
+        "pre_registered": true,
+        "nstar": {},
+        "transfer_beats_target_only": false
+      },
+      "CRSS->BAAC": {
+        "pre_registered": true,
+        "nstar": {
+          "finetune": 25000,
+          "target_only": 25000
+        },
+        "transfer_beats_target_only": false
+      },
+      "CRSS->STATS19": {
+        "pre_registered": false,
+        "nstar": {},
+        "transfer_beats_target_only": false
+      },
+      "STATS19->BAAC": {
+        "pre_registered": true,
+        "nstar": {
+          "finetune": 25000,
+          "target_only": 25000
+        },
+        "transfer_beats_target_only": false
+      },
+      "STATS19->CRSS": {
+        "pre_registered": false,
+        "nstar": {
+          "finetune": 25000,
+          "target_only": 25000
+        },
+        "transfer_beats_target_only": false
+      }
+    },
+    "n_pairs_transfer_reaches_T0_minus_001_before_target_only": 0,
+    "rule": "rejected if on 4 of 6 pairs no transfer arm reaches T0-0.01 at a smaller N than target-only",
+    "rejected": true
+  },
+  "RQ10": {
+    "per_pair": {
+      "BAAC->CRSS": {
+        "pre_registered": true,
+        "ece_T1": 0.1740983148502776,
+        "ece_official": 0.0342941578070597,
+        "ece_minus20": 0.0413792869084807,
+        "ece_plus20": 0.0300625835512065,
+        "ece_em": 0.0651994071878611,
+        "official_lower": true
+      },
+      "BAAC->STATS19": {
+        "pre_registered": true,
+        "ece_T1": 0.0522115824644736,
+        "ece_official": 0.1099588210457498,
+        "ece_minus20": 0.1306976587667083,
+        "ece_plus20": 0.0913350908448597,
+        "ece_em": 0.2386029052687264,
+        "official_lower": false
+      },
+      "CRSS->BAAC": {
+        "pre_registered": true,
+        "ece_T1": 0.1561511138642757,
+        "ece_official": 0.1351974850753607,
+        "ece_minus20": 0.0896622997622922,
+        "ece_plus20": 0.1938879756458086,
+        "ece_em": 0.6398382328511264,
+        "official_lower": true
+      },
+      "CRSS->STATS19": {
+        "pre_registered": false,
+        "ece_T1": 0.0759602440217403,
+        "ece_official": 0.0529367543661722,
+        "ece_minus20": 0.0452580558518886,
+        "ece_plus20": 0.0808395379447942,
+        "ece_em": 0.6409434165077341,
+        "official_lower": true
+      },
+      "STATS19->BAAC": {
+        "pre_registered": true,
+        "ece_T1": 0.1083121889180435,
+        "ece_official": 0.0623166443341494,
+        "ece_minus20": 0.0389368871539575,
+        "ece_plus20": 0.117937285929097,
+        "ece_em": 0.4847982903162991,
+        "official_lower": true
+      },
+      "STATS19->CRSS": {
+        "pre_registered": false,
+        "ece_T1": 0.0360481483080174,
+        "ece_official": 0.0347513970590075,
+        "ece_minus20": 0.0496115501543254,
+        "ece_plus20": 0.0199986120007586,
+        "ece_em": 0.1107672136182375,
+        "official_lower": true
+      }
+    },
+    "n_pairs_official_prior_lowers_ece": 5,
+    "rule": "rejected if ECE after correction with the official KSI share is not lower than T1 on 4 of 6 pairs",
+    "rejected": false
+  }
+}

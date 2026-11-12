@@ -1,0 +1,13 @@
+{
+  "kendall_w": 0.8197358197358198,
+  "bootstrap50_ci": [
+    0.8197358197358198,
+    0.8228438228438228
+  ],
+  "spearman_pairwise": {
+    "STATS19~CRSS": 0.7972027972027973,
+    "STATS19~BAAC": 0.8461538461538463,
+    "CRSS~BAAC": 0.5454545454545455
+  },
+  "note": "12 features, 3 countries: underpowered, descriptive"
+}

@@ -1,0 +1,98 @@
+{
+  "RQ6": {
+    "per_country": {
+      "STATS19": {
+        "pooled": [
+          0.6397044269797603,
+          0.6355356758189815,
+          0.6430312148811179
+        ],
+        "best_single": "BAAC->STATS19",
+        "best": [
+          0.6378394133986468,
+          0.6339979725514773,
+          0.6415196810881344
+        ],
+        "overlap": true,
+        "pooled_better": true
+      },
+      "CRSS": {
+        "pooled": [
+          0.6804400456407782,
+          0.6692698182983047,
+          0.6899551029836977
+        ],
+        "best_single": "STATS19->CRSS",
+        "best": [
+          0.694018688747724,
+          0.6817768388463181,
+          0.7051374342915553
+        ],
+        "overlap": true,
+        "pooled_better": false
+      },
+      "BAAC": {
+        "pooled": [
+          0.6283975408350632,
+          0.6233553665825085,
+          0.6326427512902383
+        ],
+        "best_single": "STATS19->BAAC",
+        "best": [
+          0.6271299792350321,
+          0.6225902073761532,
+          0.632186656086241
+        ],
+        "overlap": true,
+        "pooled_better": true
+      }
+    },
+    "n_overlap": 3,
+    "rule": "rejected if on >= 2 of 3 held-out countries the pooled CI overlaps the best single source (or pooled is lower)",
+    "rejected": true
+  },
+  "RQ7": {
+    "per_pair": {
+      "STATS19->CRSS": {
+        "ece_T1": 0.0360481483080174,
+        "ece_T2b": 0.1107672136182375,
+        "lower": false
+      },
+      "CRSS->STATS19": {
+        "ece_T1": 0.0759602440217403,
+        "ece_T2b": 0.6409434165077341,
+        "lower": false
+      },
+      "BAAC->STATS19": {
+        "ece_T1": 0.0522115824644736,
+        "ece_T2b": 0.2386029052687264,
+        "lower": false
+      },
+      "BAAC->CRSS": {
+        "ece_T1": 0.1740983148502776,
+        "ece_T2b": 0.0651994071878611,
+        "lower": true
+      },
+      "STATS19->BAAC": {
+        "ece_T1": 0.1083121889180435,
+        "ece_T2b": 0.4847982903162991,
+        "lower": false
+      },
+      "CRSS->BAAC": {
+        "ece_T1": 0.1561511138642757,
+        "ece_T2b": 0.6398382328511264,
+        "lower": false
+      }
+    },
+    "n_lower": 1,
+    "rejected": true
+  },
+  "RQ8": {
+    "kendall_w": 0.8197358197358198,
+    "ci": [
+      0.8197358197358198,
+      0.8228438228438228
+    ],
+    "rejected": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "rule": "stop if AUROC(KSI, test 2023) > 0.60",
+  "results": {
+    "STATS19": {
+      "auroc_unweighted": 0.4866044616125895,
+      "auroc_weighted": 0.4866044616125895,
+      "n_trees": 2,
+      "auroc_real_labels_unweighted": 0.6946235020700072
+    },
+    "CRSS": {
+      "auroc_unweighted": 0.5104134166499423,
+      "auroc_weighted": 0.5170748439588333,
+      "n_trees": 93,
+      "auroc_real_labels_unweighted": 0.6570986837967103
+    }
+  },
+  "passed": true
+}

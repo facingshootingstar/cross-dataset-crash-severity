@@ -1,0 +1,32 @@
+{
+  "CRSS_test2023": {
+    "n_strata": 25,
+    "n_psu": 67,
+    "min_psu_per_stratum": 2
+  },
+  "width_ratio_design_vs_locked_run": {
+    "auroc": 1.1217883051973996,
+    "auprc": 0.9837071179964069,
+    "ece": 1.0743879140184163
+  },
+  "rq1_posthoc": {
+    "STATS19": {
+      "overlap": false,
+      "rule_verdict": "Not rejected",
+      "paired_diff": 0.03060445452919891,
+      "paired_ci": [
+        0.028507351554453185,
+        0.032755277813073864
+      ]
+    },
+    "CRSS": {
+      "overlap": true,
+      "rule_verdict": "Rejected",
+      "paired_diff": 0.02045538624262644,
+      "paired_ci": [
+        0.016194588238004647,
+        0.025107909564976622
+      ]
+    }
+  }
+}

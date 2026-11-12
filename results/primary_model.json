@@ -1,0 +1,8 @@
+{
+  "selection": "mean validation-2022 AUPRC (CRSS weighted) over STATS19 and CRSS; XGBoost vs LightGBM",
+  "scores": {
+    "lightgbm": 0.3640166733414958,
+    "xgboost": 0.3655121403963507
+  },
+  "primary": "xgboost"
+}

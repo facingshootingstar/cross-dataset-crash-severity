@@ -1,0 +1,66 @@
+{
+  "proxy_a_distance": {
+    "BAAC->STATS19": {
+      "domain_classifier_test_error": 0.00013333333333333334,
+      "proxy_a_distance": 1.9994666666666667,
+      "ess_fraction": 1.0,
+      "n_per_domain": 150000
+    },
+    "BAAC->CRSS": {
+      "domain_classifier_test_error": 0.006611111111111111,
+      "proxy_a_distance": 1.9735555555555555,
+      "ess_fraction": 0.02034868480008018,
+      "n_per_domain": 150000
+    },
+    "STATS19->BAAC": {
+      "domain_classifier_test_error": 0.00011111111111111112,
+      "proxy_a_distance": 1.9995555555555555,
+      "ess_fraction": 1.0000000000000002,
+      "n_per_domain": 150000
+    },
+    "CRSS->BAAC": {
+      "domain_classifier_test_error": 0.007055555555555555,
+      "proxy_a_distance": 1.9717777777777779,
+      "ess_fraction": 0.04185379174895786,
+      "n_per_domain": 150000
+    }
+  },
+  "em_prior": {
+    "STATS19->CRSS": {
+      "pi_source": 0.19881841329785713,
+      "pi_em": 0.001,
+      "pi_target_test": 0.11151910046232219,
+      "degenerate": true
+    },
+    "CRSS->STATS19": {
+      "pi_source": 0.10822705617530994,
+      "pi_em": 0.8805833929447623,
+      "pi_target_test": 0.23940608874139155,
+      "degenerate": false
+    },
+    "BAAC->STATS19": {
+      "pi_source": 0.35093129553844465,
+      "pi_em": 0.001,
+      "pi_target_test": 0.23940608874139155,
+      "degenerate": true
+    },
+    "BAAC->CRSS": {
+      "pi_source": 0.35093129553844465,
+      "pi_em": 0.04651531755984878,
+      "pi_target_test": 0.11151910046232219,
+      "degenerate": false
+    },
+    "STATS19->BAAC": {
+      "pi_source": 0.19881841329785713,
+      "pi_em": 0.8433845178788543,
+      "pi_target_test": 0.35934625588195424,
+      "degenerate": false
+    },
+    "CRSS->BAAC": {
+      "pi_source": 0.10822705617530994,
+      "pi_em": 0.999,
+      "pi_target_test": 0.35934625588195424,
+      "degenerate": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model": "xgboost",
+  "n_features": 12,
+  "spearman_rho": 0.7972027972027973,
+  "p_value": 0.0019003677255282697,
+  "bootstrap50_ci": [
+    0.7972027972027973,
+    0.8321678321678322
+  ],
+  "note": "12 features only: underpowered; descriptive, no causal reading",
+  "top3_STATS19": [
+    "vru_involved",
+    "speed_limit_mph",
+    "n_vehicles"
+  ],
+  "top3_CRSS": [
+    "vru_involved",
+    "n_vehicles",
+    "speed_limit_mph"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "STATS19->CRSS": {
+    "domain_classifier_test_error": 0.07105555555555555,
+    "proxy_a_distance": 1.7157777777777778,
+    "ess_fraction": 0.12031020799775922,
+    "n_per_domain": 150000
+  },
+  "CRSS->STATS19": {
+    "domain_classifier_test_error": 0.0704111111111111,
+    "proxy_a_distance": 1.7183555555555556,
+    "ess_fraction": 0.06019665309826215,
+    "n_per_domain": 150000
+  }
+}

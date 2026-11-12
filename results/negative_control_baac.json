@@ -1,0 +1,5 @@
+{
+  "rule": "stop if AUROC(KSI, BAAC test 2023) > 0.60",
+  "auroc_permuted_labels": 0.5566147978667901,
+  "passed": true
+}

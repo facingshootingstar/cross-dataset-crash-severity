@@ -1,0 +1,9 @@
+{
+  "role": "held out; outside the protocol window; not fitted, not evaluated",
+  "n_collisions": 101525,
+  "severity_counts": {
+    "1": 1453,
+    "2": 25191,
+    "3": 74881
+  }
+}
