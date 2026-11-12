@@ -1,0 +1,33 @@
+source_column,codebook_value,shared_name,transform,semantic_risk
+STATS19 collision.time (HH:MM),hh part,hour,hour = int(HH); 0-23,close
+CRSS accident.HOUR,0-23 valid; 99 -> null,hour,raw HOUR (not HOUR_IM),close
+STATS19 collision.day_of_week,1 Sunday..7 Saturday; -1 -> null,day_of_week,verified equal to weekday of `date` (0 mismatches),close
+CRSS accident.DAY_WEEK,1 Sunday..7 Saturday; 9 -> null,day_of_week,raw,close
+STATS19 collision.date,dd/mm/yyyy,month,month of date,close
+CRSS accident.MONTH,1-12,month,raw,close
+STATS19 collision.light_conditions,"1 Daylight -> 0; 4,5,6,7 Darkness -> 1; -1 -> null",lighting_dark,,close
+CRSS accident.LGT_COND,"1,4,5 -> 0; 2,3,6 -> 1; 7,8,9 -> null",lighting_dark,"dawn/dusk (4,5) coded not-dark because STATS19 has no dawn/dusk and codes by darkness",shifted
+STATS19 collision.weather_conditions,"1,4 -> clear; 2,5 -> rain; 3,6 -> snow; 7 -> fog; 8 -> other; 9,-1 -> null",weather_coarse,high-wind variants merged into the base class,close
+CRSS accident.WEATHER,"1,10 -> clear; 2,12 -> rain; 3,4,11 -> snow; 5 -> fog; 6,7,8 -> other; 98,99 -> null",weather_coarse,Cloudy (10) counted as clear; STATS19 has no cloud class; WEATHER derived from different sub-fields before/after 2020 (manual C26),shifted
+STATS19 collision.speed_limit,"20,30,40,50,60,70 valid; -1,99 -> null",speed_limit_mph,mph on both sides,close
+CRSS vehicle.VSPD_LIM,"5-95 valid; 0 (no statutory limit/driveway), 98, 99 -> null; max over vehicles of the crash",speed_limit_mph,"US limits recorded per vehicle, taken from police report; range and distribution differ (US 5-95 vs UK 20-70)",shifted
+STATS19 collision.junction_detail,"0 -> 0; 1,2,3,5,6,7,8,9,13,16,17,18,19 -> 1; -1,99 -> null",junction,uses the converted 2024-spec column; junction_detail_historic is not used. 2024 has 7% -1,shifted
+CRSS accident.RELJCT2,"1 non-junction -> 0; 2,3,4,8 (intersection, intersection-related, driveway access/related) -> 1; 5,6,7,16-20,98,99 -> null",junction,"UK counts private drive/entrance as a junction, so US driveway codes are mapped to 1; interchange-type codes unmappable",shifted
+STATS19 collision.number_of_vehicles,>=1,n_vehicles,post-event quantity; scene triage framing,close
+CRSS accident.VE_TOTAL,>=1,n_vehicles,VE_TOTAL (incl. parked) chosen over VE_FORMS because STATS19 counts parked vehicles involved,shifted
+STATS19 collision.urban_or_rural_area,"1 urban, 2 rural, 3 unallocated -> null",urban_rural,DfT classification,shifted
+CRSS accident.URBANICITY,"1 urban, 2 rural",urban_rural,Census-based urban area; definitions differ across countries,shifted
+STATS19 vehicle.vehicle_type; casualty.casualty_type,"vehicle_type 1,2,3,4,5,23,97 or casualty_type 0,1 -> 1",vru_involved,"pedestrian/cyclist from casualty table, so uninjured pedestrians are absent (STATS19 records injury collisions)",shifted
+CRSS person.PER_TYP; vehicle.BODY_TYP,"PER_TYP 5,6,7 or BODY_TYP 80-89 -> 1",vru_involved,CRSS persons include uninjured non-motorists,shifted
+STATS19 vehicle.vehicle_type,"8,9 car; 19,20,21,98 goods; 10,11 bus; 2,3,4,5,23,97 motorcycle; 17,18,22,33,90 other; 1,16,99,-1 -> null",vehicle_type_mode,mode over motor vehicles; ties: motorcycle > goods > bus > car > other,shifted
+CRSS vehicle.BODY_TYP,"1-20 car (incl. SUV, minivan); 21,22,28,29,30-34,39-41,45,48,49,60-64,66,67,71,72,78,79 goods (vans, pickups, trucks); 50-52,55,58,59 bus; 80-89 motorcycle; 42,65,73,90-97 other; 98,99 null",vehicle_type_mode,US pickups/large vans are a mass-market passenger class; UK codes them as goods <=3.5t only when used as vans. Largest semantic gap in the table,shifted
+STATS19 vehicle.age_of_driver,"vehicle_reference 1, age >= 0; bands <16,16-20,21-25,26-35,36-45,46-55,56-65,66-75,>75",driver_age_band,same cut points as UK age_band_of_driver codes 4-11,close
+CRSS person.AGE,"PER_TYP 1 of VEH_NO 1, AGE 0-120; same bands",driver_age_band,raw AGE (not AGE_IM),close
+STATS19 vehicle.sex_of_driver,"1 M, 2 F, else null",driver_sex,fairness appendix only; not in X,close
+CRSS person.SEX,"1 M, 2 F, else null",driver_sex,fairness appendix only; not in X,close
+STATS19 collision.collision_severity,"1 Fatal, 2 Serious, 3 Slight",y_3class,DfT definition; severity depends on injury-based reporting (IBRS) from 2016 onward,shifted
+CRSS accident.MAXSEV_IM,"4 -> Fatal; 3 -> Serious; 2,1 -> Slight; 0,5,6,8 dropped",y_3class,"KABCO A is not DfT 'Serious'; pre-registered, see PROTOCOL s3",shifted
+both,Fatal + Serious,y_ksi,headline binary task,shifted
+CRSS accident.WEIGHT,as is; never overwritten,weight,UK = 1,source-only
+STATS19 collision.collision_injury_based,0/1,(audit) collision_injury_based,audit and IBRS sensitivity only,source-only
+CRSS accident.MAXSEV_IM,raw code,(audit) maxsev_im,audit only,source-only

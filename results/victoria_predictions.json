@@ -1,0 +1,40 @@
+{
+  "P11": {
+    "pairs_meeting": 6,
+    "of": 6,
+    "supported": true
+  },
+  "P12": {
+    "pairs_meeting": 6,
+    "of": 6,
+    "supported": true
+  },
+  "P13": {
+    "pairs_meeting": 5,
+    "of": 6,
+    "supported": true
+  },
+  "P14": {
+    "pairs_meeting": 6,
+    "of": 6,
+    "supported": true
+  },
+  "P15": {
+    "pairs_meeting": 6,
+    "of": 6,
+    "supported": true
+  },
+  "P16": {
+    "xgboost": [
+      0.6775787689533153,
+      0.6692643504090615,
+      0.6864838396147388
+    ],
+    "logreg": [
+      0.6574954883631885,
+      0.6487655002859803,
+      0.6672785531830016
+    ],
+    "supported": true
+  }
+}

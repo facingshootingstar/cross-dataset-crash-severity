@@ -1,0 +1,12 @@
+pandas==3.0.1
+pyarrow==23.0.1
+numpy==2.4.6
+scikit-learn==1.8.0
+xgboost==3.4.1
+lightgbm==4.7.0
+catboost==1.2.8
+shap==0.52.0
+scipy==1.17.1
+matplotlib==3.10.8
+joblib==1.5.3
+torch==2.11.0

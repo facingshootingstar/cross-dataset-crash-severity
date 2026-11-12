@@ -1,0 +1,25 @@
+{
+  "title": "Code and results for: Transferring Road Crash Severity Models Across Countries: Evidence from Great Britain, the United States and France",
+  "upload_type": "software",
+  "description": "Code, pre-specified protocols and result files for the study of transferring crash severity models between Great Britain (STATS19), the United States (CRSS), France (BAAC) and Victoria, Australia. The raw data are public and are downloaded by tools/download_data.py.",
+  "creators": [
+    {
+      "name": "Nguyen, Van Trong Hieu",
+      "affiliation": "FPT University",
+      "orcid": "0009-0008-3736-4832"
+    },
+    {
+      "name": "Pham, Thanh Tri",
+      "affiliation": "FPT University",
+      "orcid": "0009-0008-8858-347X"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "road crash severity",
+    "cross-country transfer",
+    "probability calibration",
+    "domain shift",
+    "learning curve"
+  ]
+}

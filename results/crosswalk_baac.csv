@@ -1,0 +1,26 @@
+source_column,codebook_value,shared_name,transform,semantic_risk
+caract.hrmn,HH:MM (2019+) / HHMM int (2016-18),hour,hour part,close
+caract.jour/mois/an,date,day_of_week; month,1=Sunday,close
+caract.lum,1 day; 2 dusk/dawn,lighting_dark,0,close
+caract.lum,"3,4,5 night (no/unlit/lit)",lighting_dark,1,close
+caract.atm,1 normal; 7 dazzling; 8 overcast,weather_coarse,clear,close
+caract.atm,2 light rain; 3 heavy rain,weather_coarse,rain,close
+caract.atm,4 snow/hail,weather_coarse,snow,close
+caract.atm,5 fog/smoke,weather_coarse,fog,close
+caract.atm,6 strong wind; 9 other,weather_coarse,other,shifted
+caract.int,1 not an intersection,junction,0,close
+caract.int,2-9 intersection types,junction,1,close
+caract.agg,2 in built-up area / 1 outside,urban_rural,urban / rural,shifted
+lieux.vma,"km/h in {20,30,50,70,80,90,110,130} (2019+ only)",speed_limit_mph,"x0.621371, max over rows",shifted
+vehicules.Num_Acc,count of vehicles,n_vehicles,count,close
+vehicules.catv,"03 microcar, 07 VL",vehicle_type_mode,car,close
+vehicules.catv,"10 VU, 13-17 HGV/tractor",vehicle_type_mode,goods,close
+vehicules.catv,"37 bus, 38 coach",vehicle_type_mode,bus,close
+vehicules.catv,"02, 30-34, 41-43 moped/motorcycle/3-wheel",vehicle_type_mode,motorcycle,close
+vehicules.catv,"20,21,35,36,39,40,50,99",vehicle_type_mode,other,shifted
+vehicules.catv,"01 bicycle, 80 e-bike, 60 non-motor PT",vehicle_type_mode,NaN (not motor vehicle),close
+usagers.catu + vehicules.catv,pedestrian; 01/80/50/60; motorcycle class,vru_involved,1 if any,shifted
+usagers.an_nais,driver (catu 1) of lowest num_veh,driver_age_band,"year - an_nais, 0-120",close
+usagers.sexe,"1 M, 2 F",driver_sex,fairness appendix only,close
+usagers.grav,2 killed 30d / 3 hospitalised>24h / 4 slight,y_3class,"1/2/3, worst user",shifted
+caract.dep,starts 97/98 (overseas),(row filter),dropped,source-only

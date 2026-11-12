@@ -20,3 +20,7 @@ $PY -m tools.learning_curve
 $PY -m tools.apply_criteria
 $PY -m tools.feature_alignment
 $PY -m tools.seed_ladder
+$PY -m tools.learner_ladder
+$PY -m tools.factor_effects
+$PY -m tools.victoria
+$PY -m tools.small_units
